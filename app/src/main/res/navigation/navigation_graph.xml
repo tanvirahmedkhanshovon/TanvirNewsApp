@@ -23,7 +23,7 @@
         tools:layout="@layout/news_details">
         <argument
             android:name="news_details_content"
-            app:argType="com.tanvir.transferwisenewsapp.model.Article" />
+            app:argType="com.tanvir.newsapp.model.Article" />
     </fragment>
 
 
