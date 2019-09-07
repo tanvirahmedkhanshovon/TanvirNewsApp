@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TransferWiseNewsApp</string>
+    <string name="api_key">1b0a7f5154e549869e3516588faa4715</string>
+    <string name="news_image">news_image</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/newsListFragment">
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="com.tanvir.newsapp.view.NewsListFragment"
+        android:label="News App"
+        tools:layout="@layout/news_list">
+        <action
+            android:id="@+id/newsToDetails"
+            app:destination="@id/newsDetailsFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.tanvir.newsapp.view.NewsDetailsFragment"
+        android:label="News Details"
+        tools:layout="@layout/news_details">
+        <argument
+            android:name="news_details_content"
+            app:argType="com.tanvir.transferwisenewsapp.model.Article" />
+    </fragment>
+
+
+</navigation>
