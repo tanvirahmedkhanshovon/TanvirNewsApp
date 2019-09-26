@@ -11,6 +11,7 @@ import java.util.List;
 public class NewsViewModel extends ViewModel {
 
     private NewsAppRepository newsAppRepository;
+    private LiveData<List<Article>> articleLiveData;
 
     public NewsViewModel(NewsAppRepository newsAppRepository) {
         this.newsAppRepository = newsAppRepository;
@@ -19,13 +20,25 @@ public class NewsViewModel extends ViewModel {
     public LiveData<List<Article>> getNewsFromInternetAndSaveToDataBase(String country) {
 
 
-        return newsAppRepository.getNewsApiMutableLiveData(country);
+        if(articleLiveData == null){
+
+            articleLiveData =  newsAppRepository.getNewsApiMutableLiveData(country);
+        }
+
+        return  articleLiveData;
+
+
     }
 
     public LiveData<List<Article>> getNewsFromDataBaseInOffLine() {
 
 
-        return newsAppRepository.getNewsFromDataBase();
+        if(articleLiveData == null){
+
+            articleLiveData =  newsAppRepository.getNewsFromDataBase();
+        }
+
+        return  articleLiveData;
     }
 
     public LiveData<Integer> getNewsCount() {
